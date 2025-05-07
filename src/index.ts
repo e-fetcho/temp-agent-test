@@ -63,14 +63,14 @@ const sseEvent = (targetStr: string, res: Response, messageType: String) => {
 
 async function handleQueryMain(query: string, res: Response): Promise<string> {
   const llm = await ChatModel.fromName(
-    "watsonx:meta-llama/llama-3-3-70b-instruct"
+    "watsonx:ibm/granite-3-8b-instruct"
   );
 
   memory.reset();
   const agent = new BeeAgent({
     llm,
     memory,
-    tools: [new CalculatorTool()],
+    tools: [new FlightCostLookupTool(), new FlightBookingTool(), new CalculatorTool()],
   });
 
   const systemPrompt: string = `
