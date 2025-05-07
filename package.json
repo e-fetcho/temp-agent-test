@@ -1,0 +1,27 @@
+{
+  "name": "skassistant",
+  "version": "1.0.0",
+  "description": "Personal Assistant",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "nodemon -e \"ts\" --exec \"node --inspect --loader ts-node/esm  ./src/index.ts\""
+  },
+  "type": "module",
+  "author": "",
+  "license": "All Rights Reserved",
+  "dependencies": {
+    "@ibm-cloud/watsonx-ai": "^1.6.1",
+    "beeai-framework": "^0.1.4",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7",
+    "zod": "3.23.8",
+    "zod-to-json-schema": "3.23.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
