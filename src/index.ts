@@ -4,6 +4,7 @@ import { BeeAgent } from "beeai-framework/agents/bee/agent";
 import { TokenMemory } from "beeai-framework/memory/tokenMemory";
 import { FrameworkError } from "beeai-framework/errors";
 import { FlightCostLookupTool } from "./Tools/FlightCostLookupTool.js";
+import { CalculatorTool } from "./Tools/calculator.js";
 
 import { ChatModel } from "beeai-framework/backend/core";
 
@@ -69,7 +70,7 @@ async function handleQueryMain(query: string, res: Response): Promise<string> {
   const agent = new BeeAgent({
     llm,
     memory,
-    tools: [new FlightCostLookupTool(), new FlightBookingTool()],
+    tools: [new CalculatorTool()],
   });
 
   const systemPrompt: string = `
