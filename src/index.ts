@@ -3,16 +3,12 @@ import express, { Request, Response } from "express";
 import { BeeAgent } from "beeai-framework/agents/bee/agent";
 import { TokenMemory } from "beeai-framework/memory/tokenMemory";
 import { FrameworkError } from "beeai-framework/errors";
-//import { FlightCostLookupTool } from "./Tools/FlightCostLookupTool.js";
-import { CalculatorTool } from "./Tools/calculator.js";  
-//import { MilvusTool } from "./Tools/milvus.js"
-//import { ElasticsearchTool } from "./Tools/elasticsearch.ts"
-
+import { FlightCostLookupTool } from "./Tools/FlightCostLookupTool.js";
 
 import { ChatModel } from "beeai-framework/backend/core";
 
 import "dotenv/config";
-//import { FlightBookingTool } from "./Tools/FlightBookingTool.js";
+import { FlightBookingTool } from "./Tools/FlightBookingTool.js";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -66,15 +62,14 @@ const sseEvent = (targetStr: string, res: Response, messageType: String) => {
 
 async function handleQueryMain(query: string, res: Response): Promise<string> {
   const llm = await ChatModel.fromName(
-    "watsonx:meta-llama/llama-3-1-70b-instruct"
+    "watsonx:meta-llama/llama-3-3-70b-instruct"
   );
 
   memory.reset();
   const agent = new BeeAgent({
     llm,
     memory,
- //   tools: [new MilvusTool(), new ElasticsearchTool(), new CalculatorTool()]
-      tools: [new CalculatorTool()]
+    tools: [new FlightCostLookupTool(), new FlightBookingTool()],
   });
 
   const systemPrompt: string = `
