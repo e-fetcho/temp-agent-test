@@ -63,7 +63,7 @@ const sseEvent = (targetStr: string, res: Response, messageType: String) => {
 
 async function handleQueryMain(query: string, res: Response): Promise<string> {
   const llm = await ChatModel.fromName(
-    "watsonx:ibm/granite-3-8b-instruct"
+    "watsonx:meta-llama/llama-3-3-70b-instruct"
   );
 
   memory.reset();
