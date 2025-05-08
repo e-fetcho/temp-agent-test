@@ -69,7 +69,7 @@ async function handleQueryMain(query: string, res: Response): Promise<string> {
   const agent = new BeeAgent({
     llm,
     memory,
-    tools: [new FlightCostLookupTool(), new FlightBookingTool(), new CalculatorTool()],
+    tools: [new FlightCostLookupTool(), new FlightBookingTool()],
   });
 
   const systemPrompt: string = `
