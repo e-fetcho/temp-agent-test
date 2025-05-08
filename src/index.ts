@@ -4,7 +4,7 @@ import { BeeAgent } from "beeai-framework/agents/bee/agent";
 import { TokenMemory } from "beeai-framework/memory/tokenMemory";
 import { FrameworkError } from "beeai-framework/errors";
 import { FlightCostLookupTool } from "./Tools/FlightCostLookupTool.js";
-import { CalculatorTool } from "./tools/calculator.js";
+//import { CalculatorTool } from "./tools/calculator.js";
 
 import { ChatModel } from "beeai-framework/backend/core";
 
