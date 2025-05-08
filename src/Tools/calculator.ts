@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import { ToolEmitter, StringToolOutput, Tool, ToolInput } from "./tools/base.js";
+import { ToolEmitter, StringToolOutput, Tool, ToolInput } from "@/tools/base.js";
 import { z } from "zod";
 import { create, all, evaluate, ImportOptions, ImportObject, ConfigOptions } from "mathjs";
-import { Emitter } from "./emitter/emitter.js";
+import { Emitter } from "@/emitter/emitter.js";
 
 export interface CalculatorToolInput {
   config?: ConfigOptions;
