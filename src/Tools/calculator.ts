@@ -21,10 +21,10 @@ import {
     ToolInputValidationError,
     JSONToolOutput,
     StringToolOutput,
-  } from "@/tools/base";
+  } from "./src/tools/base";
 import { z } from "zod";
 import { create, all, evaluate, ImportOptions, ImportObject, ConfigOptions } from "mathjs";
-import { Emitter } from "@/emitter/emitter/emitter";
+import { Emitter } from "./src/emitter/emitter/emitter";
 
 export interface CalculatorToolInput {
   config?: ConfigOptions;
