@@ -3,13 +3,13 @@ import express, { Request, Response } from "express";
 import { BeeAgent } from "beeai-framework/agents/bee/agent";
 import { TokenMemory } from "beeai-framework/memory/tokenMemory";
 import { FrameworkError } from "beeai-framework/errors";
-import { FlightCostLookupTool } from "./Tools/FlightCostLookupTool.js";
-//import { CalculatorTool } from "./tools/calculator.js";
+//import { FlightCostLookupTool } from "./Tools/FlightCostLookupTool.js";
+import { CalculatorTool } from "./tools/calculator.js";
 
 import { ChatModel } from "beeai-framework/backend/core";
 
 import "dotenv/config";
-import { FlightBookingTool } from "./Tools/FlightBookingTool.js";
+//import { FlightBookingTool } from "./Tools/FlightBookingTool.js";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -69,7 +69,7 @@ async function handleQueryMain(query: string, res: Response): Promise<string> {
   const agent = new BeeAgent({
     llm,
     memory,
-    tools: [new FlightCostLookupTool(), new FlightBookingTool()],
+    tools: [new CalculatorTool()],
   });
 
   const systemPrompt: string = `
