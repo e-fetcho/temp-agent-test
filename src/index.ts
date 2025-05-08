@@ -13,6 +13,15 @@ import { FlightBookingTool } from "./Tools/FlightBookingTool.js";
 
 import { v4 as uuidv4 } from "uuid";
 
+export * from "./logger/logger.js";
+export * from "./template.js";
+export * from "./errors.js";
+export * from "./version.js";
+export * from "./serializer/serializer.js";
+export * from "./agents/base.js";
+export * from "./backend/chat.js";
+export * from "./backend/embedding.js";
+export * from "./tools/base.js";
 
 interface User {
   auth_method: "bearer" | "api_key";
